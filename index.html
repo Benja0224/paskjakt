@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            body{
+                text-align: center;
+                font-size: larger;
+                padding:15px;
+            }
+            input{
+                display: inline-block;
+                padding: 5px;
+                border-radius: 8px;
+                border-color: dimgray;
+                box-shadow: 0 2px 3px grey; 
+                text-align: center;
+            }
+            #out{
+                color: red;
+            }
+            button{
+            padding: 13px 18px;
+            margin: 20px;
+            background: lightgrey;
+            border-radius: 5px;
+            border-color: dimgray;
+            font-size: 1.1em;
+            color: black;
+            font-weight: bold;
+            cursor: grab;
+            box-shadow: 0 4px 6px grey; 
+        }
+        </style>
+    </head>
+    <body>
+        
+
+        <h1>Påskäggsjakt</h1>
+        
+        <input id="pin-input" type="text" placeholder="PIN"  value=""><br>
+        <button onclick="check_pin()">Skicka</button>
+        <div id="out"></div>
+        
+        <script>
+            function check_pin(){
+               let pin = document.getElementById("pin-input").value
+               if(pin == "0224"){
+                    window.open("/quiz.html", "_self")
+               }else{
+                    document.getElementById("out").innerHTML = "Fel kod, försök igen!"
+               }
+
+            }
+        </script>
+    </body>
+</html>

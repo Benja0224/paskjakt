@@ -1,0 +1,130 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        .side-arrow{
+            max-width: 30px;
+            padding:3px;
+            vertical-align: center;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: flex;
+            align-items: center
+        }
+        .side-arrow:hover{
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        #main_flex{
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            flex-direction: row;
+        }
+        #main{
+            display: inline-block;
+            width:80%
+        }
+        #dog-img{
+            width:100%;
+        }
+        .answer-list {
+            list-style: none;
+            margin: 20px;
+            padding: 5px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+        }
+        .answer-btn{
+            border:#333 solid;
+            border-radius: 5px;
+            margin: 5px;
+            padding: 5px;
+            cursor: pointer;
+        }
+        #guess-btn{
+            padding: 15px 20px;
+            width: 200px;
+            margin: auto;
+            background: lightgrey;
+            border-radius: 5px;
+            font-size: 1.1em;
+            color: #333;
+            font-weight: bold;
+            cursor: grab;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        }
+        #status{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #status > div{
+            height:10px;
+            width:30px;
+            margin:5px;
+            border-radius: 5px;
+            border: 1px solid grey;
+        }
+        #link{
+            
+            display: block;
+            background-color: lightgreen;
+            border-radius: 10px;
+            padding:10px;
+            width:40%;
+            margin: auto;
+        }
+        #foo{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Gissa hunden!</h2>
+    <div id="foo">
+        <div style="height:10px;"></div>
+        <div id="link">
+            Bra jobbat! Klicka på länken för att gå vidare! <br>
+            <a href="/ledtrad.html">Nästa ledtråd!</a>
+        </div>
+        <div style="height:20px;"></div>
+    </div>
+    <div id="status">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div id="main_flex">
+        <div class="side-arrow"onclick="swipe('left')"><i class="fa-solid fa-chevron-left"></i></div>
+        <div id="main">
+            <img id="dog-img" src="img/hund1.webp">
+            <ul class="answer-list">
+                <li class="answer-btn" onclick="toggleAnswer(0)" value="2">Afghan hund</li>
+                <li class="answer-btn" onclick="toggleAnswer(1)" value="1">Mops</li>
+                <li class="answer-btn" onclick="toggleAnswer(2)" value="4">pudel</li>
+                <li class="answer-btn" onclick="toggleAnswer(3)" value="5">Sak 5</li>
+            </ul>
+        </div>
+        <div class="side-arrow" onclick="swipe('right')"><i class="fa-solid fa-chevron-right"></i></div>
+    </div>
+    
+
+    <div id="guess-btn" onclick="check_answer()">Gissa!</div>
+    
+    <script src="https://kit.fontawesome.com/ab24637e9d.js" crossorigin="anonymous"></script>
+    <script src="drag-drop-touch.esm.min.js?autoload" type="module"></script>
+    <script src="index3.js"></script>
+</body>
+</html>

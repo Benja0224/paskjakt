@@ -1,0 +1,102 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+            /*background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;*/
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        .time_arrow{
+            margin: 20px;
+            font-weight: bold;
+        }
+        .sortable-list {
+            list-style: none;
+            margin: 20px;
+            padding: 5px;
+            width: 350px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .sortable-item {
+            padding: 15px 20px;
+            margin: 8px 0;
+            background: lightgrey;
+            border-radius: 5px;
+            font-size: 1.1em;
+            color: #333;
+            font-weight: bold;
+            cursor: grab;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.2s, transform 0.2s;
+        }
+        #guess-btn{
+            padding: 15px 20px;
+            width: 350px;
+            margin: auto;
+            background: lightgrey;
+            border-radius: 5px;
+            font-size: 1.1em;
+            color: #333;
+            font-weight: bold;
+            cursor: grab;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        }
+        .dragging {
+            opacity: 0.7;
+            transform: rotate(-2deg);
+            background-color: darkgray;
+        }
+        #alert-sucess{
+            display: none;
+            background-color: lightgreen;
+            border-radius: 10px;
+            padding:10px;
+            width:40%;
+            margin: auto;
+        }
+        #alert-fail{
+            display: none;
+            background-color: lightcoral;
+            border-radius: 10px;
+            padding:10px;
+            width:40%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>Timeline</h2>
+    <p>Placera händelserna i rätt ordning.</p>
+
+    <div id="alert-sucess">
+        Bra jobbat! Klicka på länken för att gå vidare! <br>
+        <a href="/quiz2.html">Nästa ledtråd!</a>
+    </div>
+    <div id="alert-fail">
+        Tyvärr var detta inte rätt, försök igen!
+    </div>
+
+    <div class="time_arrow">Tidigare</div>
+    <ul class="sortable-list">
+        <li class="sortable-item" draggable="true" value="2">Sak 2</li>
+        <li class="sortable-item" draggable="true" value="1">Sak 1</li>
+        <li class="sortable-item" draggable="true" value="4">Sak 4</li>
+        <li class="sortable-item" draggable="true" value="5">Sak 5</li>
+        <li class="sortable-item" draggable="true" value="3">Sak 3</li>
+    </ul>
+    <div class="time_arrow">Senare</div>
+
+    <div id="guess-btn">Gissa!</div>
+    <script src="drag-drop-touch.esm.min.js?autoload" type="module"></script>
+    <script src="index.js"></script>
+</body>
+</html>
