@@ -1,9 +1,9 @@
 let page = 0;
-const facit = { 0:["hund1.webp", "afghan hund", "Terrier x", "Pudel", "Labrador"], 
-                1:["hund2.webp", "afghan hund", "Terrier", "Pudel x", "Labrador"],
-                2:["hund3.webp", "afghan hund x", "Terrier", "Pudel", "Labrador"],
-                3:["hund4.webp", "afghan hund", "Terrier", "Pudel x", "Labrador"],
-                4:["hund5.webp", "afghan hund", "Terrier", "Pudel", "Labrador x"]
+const facit = { 0:["hund6.webp", "Beauceron", "Border collie", "Mudi", "Shetland sheepdog"], 
+                1:["hund2.webp", "Bullmastiff", "Dobermann", "Boxer", "Pinscher"],
+                2:["hund3.webp", "Chow chow", "Pommeranian", "Samojed", "Japansk spets"],
+                3:["hund4.webp", "Wachtelhund", "Cocker spaniel", "Golden retriever", "Labrador retriever"],
+                4:["hund5.webp", "Papillon", "Malteser", "Bolognese", "Bichon havanais"]
             };
 let guess = [-1,-1,-1,-1,-1];
 const right_guess = [1,2,0,2,3];
@@ -61,10 +61,10 @@ function toggleAnswer(choice){
         btn_list[i].style.backgroundColor = "white";
     };
     if(choice != -1){
-        btn_list[choice].style.backgroundColor = "aqua";
+        btn_list[choice].style.backgroundColor = "LightSkyBlue";
         guess[page] = choice
         if(status_list[page].style.backgroundColor != "green"){
-            status_list[page].style.backgroundColor = "aqua";
+            status_list[page].style.backgroundColor = "LightSkyBlue";
         };
     };
 }

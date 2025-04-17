@@ -5,6 +5,7 @@
                 text-align: center;
                 font-size: larger;
                 padding:15px;
+                justify-content: center;
             }
             input{
                 display: inline-block;
@@ -14,39 +15,56 @@
                 box-shadow: 0 2px 3px grey; 
                 text-align: center;
             }
-            #out{
-                color: red;
-            }
             button{
-            padding: 13px 18px;
-            margin: 20px;
-            background: lightgrey;
-            border-radius: 5px;
-            border-color: dimgray;
-            font-size: 1.1em;
-            color: black;
-            font-weight: bold;
-            cursor: grab;
-            box-shadow: 0 4px 6px grey; 
-        }
+                padding: 13px 18px;
+                margin: 20px;
+                background: lightgrey;
+                border-radius: 5px;
+                border-color: dimgray;
+                font-size: 1.1em;
+                color: black;
+                font-weight: bold;
+                cursor: grab;
+                box-shadow: 0 4px 6px grey; 
+            }
+            .alert-fail{
+                background-color: lightcoral;
+                border-radius: 10px;
+                border:1px solid darkred;
+                color:darkred;
+                padding:10px;
+                margin: auto;
+            }
+            #main{
+                display: block;
+                position: absolute;
+                top: 50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+            }
         </style>
     </head>
     <body>
         
 
-        <h1>Påskäggsjakt</h1>
-        
-        <input id="pin-input" type="text" placeholder="PIN"  value=""><br>
-        <button onclick="check_pin()">Skicka</button>
-        <div id="out"></div>
+        <div id="main">
+            <h1>Påskäggsjakt</h1>
+
+            <input id="pin-input" type="text" placeholder="PIN"  value=""><br>
+            <button onclick="check_pin()">Skicka</button>
+
+            <div id="out"></div>
+        </div>
+    
         
         <script>
             function check_pin(){
                let pin = document.getElementById("pin-input").value
-               if(pin == "0224"){
-                    window.open("/paskjakt/quiz.html", "_self")
+               if(pin == "752"){
+                    window.open("/quiz2.html", "_self")
                }else{
                     document.getElementById("out").innerHTML = "Fel kod, försök igen!"
+                    document.getElementById("out").classList = "alert-fail"
                }
 
             }
